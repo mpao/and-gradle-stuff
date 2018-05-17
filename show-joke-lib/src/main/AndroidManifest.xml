@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="io.github.mpao.show_joke_lib"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <activity
+            android:name=".JokeActivity"
+            android:theme="@style/AppTheme"/>
+    </application>
+
+</manifest>
