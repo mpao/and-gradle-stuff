@@ -7,13 +7,13 @@
         <!-- V2: End of v2 section -->
         <init-param>
             <param-name>services</param-name>
-            <param-value>com.udacity.gradle.builditbigger.backend.MyEndpoint</param-value>
+            <param-value>com.udacity.gradle.builditbigger.backend.Endpoint</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
         <!-- V2: Start of v2 section -->
         <servlet-name>EndpointsServlet</servlet-name>
-        <url-pattern>/_ah/api/*</url-pattern>
+        <url-pattern>/lol/api/*</url-pattern>
         <!-- V2: End of v2 section -->
     </servlet-mapping>
 </web-app>
