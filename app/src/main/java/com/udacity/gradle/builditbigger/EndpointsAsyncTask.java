@@ -35,7 +35,7 @@ public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
         context = params[0];
 
         try {
-            return endpoint.getJoke().execute().getJoke();
+            return endpoint.getJoke().execute().getStatement();
         } catch (IOException e) {
             return e.getMessage();
         }

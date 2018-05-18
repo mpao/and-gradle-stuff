@@ -17,9 +17,10 @@ import io.github.mpao.jokes_lib.JokesGenerator;
 public class Endpoint {
 
     @ApiMethod(name = "getJoke")
-    public JokesGenerator getJoke() {
+    public Joke getJoke() {
 
-        return new JokesGenerator();
+        JokesGenerator generator = new JokesGenerator();
+        return new Joke(generator.getJoke());
 
     }
 
