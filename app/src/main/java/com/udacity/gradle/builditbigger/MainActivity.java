@@ -1,12 +1,15 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+import io.github.mpao.show_joke_lib.JokeActivity;
+
+public class MainActivity extends AppCompatActivity implements TaskResponse{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,15 @@ public class MainActivity extends AppCompatActivity {
     public void tellJoke(View view) {
 
         new EndpointsAsyncTask().execute(this);
+
+    }
+
+    @Override
+    public void doAfter(String output) {
+
+        Intent intent = new Intent(this, JokeActivity.class);
+        intent.putExtra("joke", output);
+        this.startActivity(intent);
 
     }
 
