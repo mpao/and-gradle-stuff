@@ -15,7 +15,7 @@ android {
     buildToolsVersion '27.0.3'
 
     defaultConfig {
-        applicationId "com.udacity.gradle.builditbigger"
+        applicationId "io.github.mpao.myapp.main"
         minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
@@ -31,13 +31,26 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    flavorDimensions "app"
+    productFlavors{
+        main{
+            dimension "app"
+            applicationId "io.github.mpao.myapp.main"
+        }
+        ads{
+            dimension "app"
+            applicationId "io.github.mpao.myapp.ads"
+            dependencies{
+                implementation 'com.google.android.gms:play-services-ads:15.0.1'
+            }
+        }
+    }
 }
 
 dependencies {
     endpointsServer project(path: ':backend', configuration: 'endpoints')
     implementation project(':show-joke-lib')
     implementation "com.android.support:appcompat-v7:$appcompat"
-    implementation 'com.google.android.gms:play-services-ads:15.0.1'
     implementation "com.google.api-client:google-api-client:$googleapi"
     implementation "com.google.http-client:google-http-client-android:$googleapi"
     implementation 'com.google.code.findbugs:jsr305:3.0.1'
